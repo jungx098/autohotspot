@@ -10,13 +10,13 @@ The included PowerShell script can be added to the Windows Task Scheduler to aut
 1. Copy the two script files to a folder on your computer.
 2. Open the Windows **Task Scheduler**.
 3. Right-click on **Task Scheduler Library** and select **Create Task**.
-    Enter a **Name** and **Description**.
-    Select **Run whether user is logged on or not**.
-    Checkmark **Run with highest privileges**.
+    - Enter a **Name** and **Description**.
+    - Select **Run whether user is logged on or not**.
+    - Checkmark **Run with highest privileges**.
 4. Click the **Triggers** tab.
 5. Click **New**.
-    For **Begin the task** select **At startup**.
-    Checkmark **Delay task for: 1 minute**.
-    Checkmark **Stop task if it runs longer than: 30 minutes**.
-    Checkmark **Enabled**.
+    - For **Begin the task** select **At startup**.
+    - Checkmark **Delay task for: 1 minute**.
+    - Checkmark **Stop task if it runs longer than: 30 minutes**.
+    - Checkmark **Enabled**.
 6. Click **OK**.
