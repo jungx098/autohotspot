@@ -19,4 +19,6 @@ The included PowerShell script can be added to the Windows Task Scheduler to aut
     - Checkmark **Delay task for: 1 minute**.
     - Checkmark **Stop task if it runs longer than: 30 minutes**.
     - Checkmark **Enabled**.
-6. Click **OK**.
+6. Click the **Conditions** tab.
+7. Uncheck the options **Stop if the computer switches to battery power** and **Start the task only if the computer is on AC power**.
+8. Click **OK**.
