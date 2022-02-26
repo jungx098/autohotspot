@@ -24,3 +24,9 @@ The included PowerShell script can be added to the Windows Task Scheduler to aut
 8. Click **OK**.
 
 *When saving the Task Scheduler, enter your username (username, ADUser\username, CORP\username, etc.) and your Windows password.*
+
+## Running the Task When Connecting to the Internet Network
+
+You may optionally want to add a condition to run the task whenever you connect to the Internet. This may be done by adding a new "Trigger" to the task scheduler. Select **On an event**, for "Log" select **Microsoft-Windows-NetworkProfile/Operational**, for Source select **NetworkProfile**, for Event ID enter **10000** *(enter 10001 for network disconnect instead of connect)*. Checkmark **Delay task for** and select **30 seconds**.
+
+This trigger may inadvertantly toggle your mobile hotspot multiple times throughout the day, depending upon your Internet connection stability. Therefore, it is generally not recommended.
