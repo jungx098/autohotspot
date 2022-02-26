@@ -22,3 +22,5 @@ The included PowerShell script can be added to the Windows Task Scheduler to aut
 6. Click the **Conditions** tab.
 7. Uncheck the options **Stop if the computer switches to battery power** and **Start the task only if the computer is on AC power**.
 8. Click **OK**.
+
+*When saving the Task Scheduler, enter your username (username, ADUser\username, CORP\username, etc.) and your Windows password.*
