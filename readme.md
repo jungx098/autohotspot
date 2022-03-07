@@ -25,6 +25,19 @@ The included PowerShell script can be added to the Windows Task Scheduler to aut
 
 *When saving the Task Scheduler, enter your username (username, ADUser\username, CORP\username, etc.) and your Windows password.*
 
+## Troubleshooting Hotspot Not Activating After Sleep/Hibernation
+
+If the hotspot enable task is not running after your PC wakes from sleep/hibernation, you can add a trigger to execute the task as soon as possible after waking. Create an additional trigger with the following steps.
+
+1. Edit the task and click the **Triggers** tab.
+2. For **Begin the task** select **On a schedule**.
+3. Check the radio option **Daily**.
+4. Enter the earliest **Start Time** to run. *For example, 8:00 AM EST. This computer does not need to be awake during this time, so it is recommended to make this time earlier than you actually need.*
+5. Select **Recur every 1 day**.
+6. Click **OK**.
+7. Click the **Settings** tab.
+8. Checkmark the option **Run task as soon as possible after a scheduled start is missed**.
+
 ## Running the Task When Connecting to the Internet Network
 
 You may optionally want to add a condition to run the task whenever you [connect](https://www.groovypost.com/howto/automatically-run-script-on-internet-connect-network-connection-drop/) to the Internet. This may be done by adding a new "Trigger" to the task scheduler. Select **On an event**, for "Log" select **Microsoft-Windows-NetworkProfile/Operational**, for Source select **NetworkProfile**, for Event ID enter **10000** *(enter 10001 for network disconnect instead of connect)*. Checkmark **Delay task for** and select **30 seconds**.
