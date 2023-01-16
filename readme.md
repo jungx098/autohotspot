@@ -1,6 +1,8 @@
 Enable Windows 10 Mobile Hotspot Automatically After Reboot
 ===========================================================
 
+[Sponsor This Project](https://github.com/sponsors/primaryobjects)
+
 On Windows 10, the Mobile Hotspot feature is automatically disabled when rebooting the machine. Users are required to manually open the Mobile Hotspot settings and toggle the slider for "Share my Internet connection with other devices" in order to enable it.
 
 The included PowerShell script can be added to the Windows Task Scheduler to automatically turn on your Windows 10 Mobile Hotspot upon reboot, login, and unlock of the workstation by any user.
