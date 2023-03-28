@@ -46,6 +46,9 @@ If the mobile hotspot is turning itself off at random periods, you can try the f
 
 1. Disable mobile hotspot power saving by opening the Mobile Hotspot settings and disabling **When no devices are connected, automatically turn off mobile hotspot**.
 2. Set the **PeerlessTimeoutEnabled** value to a longer duration. This can be done by setting the registry value `HKLM\System\ControlSet001\Services\ICSSVC\Settings\PeerlessTimeoutEnabled` to **120** (Hexadecimal) and `HKLM\System\ControlSet001\Services\ICSSVC\Settings\PublicConnectionTimeout` to **60** (Hexadecimal).
+
+    An example registry script is shown below.
+    
     ```
     Windows Registry Editor Version 5.00
     
