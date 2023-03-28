@@ -40,6 +40,20 @@ If the hotspot enable task is not running after your PC wakes from sleep/hiberna
 7. Click the **Settings** tab.
 8. Checkmark the option **Run task as soon as possible after a scheduled start is missed**.
 
+## Troubleshooting Hotspot Disabling Frequently
+
+If the mobile hotspot is turning itself off at random periods, you can try the following [settings](https://www.guidingtech.com/fix-windows-10-mobile-hotspot-keeps-turning-off/):
+
+1. Disable mobile hotspot power saving by opening the Mobile Hotspot settings and disabling **When no devices are connected, automatically turn off mobile hotspot**.
+2. Set the **PeerlessTimeoutEnabled** value to a longer duration. This can be done by setting the registry value `HKLM\System\ControlSet001\Services\ICSSVC\Settings\PeerlessTimeoutEnabled` to **120** (Hexadecimal) and `HKLM\System\ControlSet001\Services\ICSSVC\Settings\PublicConnectionTimeout` to **60** (Hexadecimal).
+    ```
+    Windows Registry Editor Version 5.00
+    
+    [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\icssvc\Settings]
+    "PeerlessTimeoutEnabled"=dword:00000120
+    "PublicConnectionTimeout"=dword:00000060
+    ```
+
 ## Running the Task When Connecting to the Internet Network
 
 You may optionally want to add a condition to run the task whenever you [connect](https://www.groovypost.com/howto/automatically-run-script-on-internet-connect-network-connection-drop/) to the Internet. This may be done by adding a new "Trigger" to the task scheduler. Select **On an event**, for "Log" select **Microsoft-Windows-NetworkProfile/Operational**, for Source select **NetworkProfile**, for Event ID enter **10000** *(enter 10001 for network disconnect instead of connect)*. Checkmark **Delay task for** and select **30 seconds**.
