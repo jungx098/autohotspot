@@ -45,7 +45,7 @@ If the hotspot enable task is not running after your PC wakes from sleep/hiberna
 If the mobile hotspot is turning itself off at random periods, you can try the following [settings](https://www.guidingtech.com/fix-windows-10-mobile-hotspot-keeps-turning-off/):
 
 1. Disable mobile hotspot power saving by opening the Mobile Hotspot settings and disabling **When no devices are connected, automatically turn off mobile hotspot**.
-2. Set the **PeerlessTimeoutEnabled** value to a longer duration. This can be done by setting the registry value `HKLM\System\ControlSet001\Services\ICSSVC\Settings\PeerlessTimeoutEnabled` to **120** (Hexadecimal) and `HKLM\System\ControlSet001\Services\ICSSVC\Settings\PublicConnectionTimeout` to **60** (Hexadecimal).
+2. Set the **PeerlessTimeoutEnabled** and **PublicConnectionTimeout** value to a longer duration. This can be done by setting the registry value `HKLM\System\ControlSet001\Services\ICSSVC\Settings\PeerlessTimeoutEnabled` to **120** (Hexadecimal) and `HKLM\System\ControlSet001\Services\ICSSVC\Settings\PublicConnectionTimeout` to **60** (Hexadecimal).
 
     An example registry script is shown below.
     
