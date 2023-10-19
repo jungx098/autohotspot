@@ -9,7 +9,7 @@ The included PowerShell script can be added to the Windows Task Scheduler to aut
 
 ## Quick Start
 
-1. Copy the two script files to a folder on your computer.
+1. Copy the two script files to a folder on your computer: `hotspot.ps1` and `hotspot.bat`
 2. Open the Windows **Task Scheduler**.
 3. Right-click on **Task Scheduler Library** and select **Create Task**.
     - Enter a **Name** and **Description**.
@@ -56,6 +56,7 @@ If the mobile hotspot is turning itself off at random periods, you can try the f
     "PeerlessTimeoutEnabled"=dword:00000120
     "PublicConnectionTimeout"=dword:00000060
     ```
+3. Run the script [hotspot-keep-alive.ps1](#file-hotspot-keep-alive-ps1).
 
 ## Running the Task When Connecting to the Internet Network
 
