@@ -1,3 +1,5 @@
+# https://superuser.com/a/1434648
+
 Add-Type -AssemblyName System.Runtime.WindowsRuntime
 $asTaskGeneric = ([System.WindowsRuntimeSystemExtensions].GetMethods() | ? { $_.Name -eq 'AsTask' -and $_.GetParameters().Count -eq 1 -and $_.GetParameters()[0].ParameterType.Name -eq 'IAsyncOperation`1' })[0]
 
@@ -57,7 +59,18 @@ Function Start_Hotspot() {
     Await ($tetheringManager.StartTetheringAsync()) ([Windows.Networking.NetworkOperators.NetworkOperatorTetheringOperationResult])
 }
 
+$currentDateTime = Get-Date -Format "MM-dd-yyyy HH:mm:ss"
+"$currentDateTime Starting hotspot keep-alive."
+
 # Keep alive wifi.
 while ($true) {
     # Get the current date and time in a specific format
     $currentDateTime = Get-Date -Format "MM-dd-yyyy HH:mm:ss"
+
+    if (Check_HotspotStatus) {
+        "$currentDateTime Hotspot is off! Turning it on"
+        Start_Hotspot
+    }
+
+    Start-Sleep -Seconds 10  # Wait for 10 seconds before checking again
+}
