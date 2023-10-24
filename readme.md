@@ -42,6 +42,8 @@ If the hotspot enable task is not running after your PC wakes from sleep/hiberna
 
 ## Troubleshooting Hotspot Disabling Frequently
 
+See also [Windows 10 Mobile Hotspot Keep Alive Script](https://gist.github.com/primaryobjects/ce8c7173ff9c6a453cda336aa2e3ff5c).
+
 If the mobile hotspot is turning itself off at random periods, you can try the following [settings](https://www.guidingtech.com/fix-windows-10-mobile-hotspot-keeps-turning-off/):
 
 1. Disable mobile hotspot power saving by opening the Mobile Hotspot settings and disabling **When no devices are connected, automatically turn off mobile hotspot**.
