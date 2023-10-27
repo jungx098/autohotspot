@@ -50,4 +50,5 @@ Function ToggleHotspot($Delay) {
     SetHotspot(1)
 }
 
-ToggleHotspot(3)
+# ToggleHotspot(3)
+SetHotspot(1)

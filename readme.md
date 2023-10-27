@@ -1,9 +1,9 @@
-Enable Windows 10 Mobile Hotspot Automatically After Reboot
+Enable Windows 11 Mobile Hotspot Automatically After Reboot
 ===========================================================
 
-:heart: [Sponsor This Project](https://github.com/sponsors/primaryobjects)
+Forked from [https://gist.github.com/primaryobjects/8b54f7f4219960127f1f620116315a37](https://gist.github.com/primaryobjects/8b54f7f4219960127f1f620116315a37)
 
-On Windows 10, the Mobile Hotspot feature is automatically disabled when rebooting the machine. Users are required to manually open the Mobile Hotspot settings and toggle the slider for "Share my Internet connection with other devices" in order to enable it.
+On Windows 11, the Mobile Hotspot feature is automatically disabled when rebooting the machine. Users are required to manually open the Mobile Hotspot settings and toggle the slider for "Share my Internet connection with other devices" in order to enable it.
 
 The included PowerShell script can be added to the Windows Task Scheduler to automatically turn on your Windows 10 Mobile Hotspot upon reboot, login, and unlock of the workstation by any user.
 
@@ -13,8 +13,6 @@ The included PowerShell script can be added to the Windows Task Scheduler to aut
 2. Open the Windows **Task Scheduler**.
 3. Right-click on **Task Scheduler Library** and select **Create Task**.
     - Enter a **Name** and **Description**.
-    - Select **Run whether user is logged on or not**.
-    - Checkmark **Run with highest privileges**.
 4. Click the **Triggers** tab.
 5. Click **New**.
     - For **Begin the task** select **At startup**.
@@ -23,9 +21,8 @@ The included PowerShell script can be added to the Windows Task Scheduler to aut
     - Checkmark **Enabled**.
 6. Click the **Conditions** tab.
 7. Uncheck the options **Stop if the computer switches to battery power** and **Start the task only if the computer is on AC power**.
+9. Change User to **SYSTEM** (**Run whether user is logged on or not** will be activated by default).
 8. Click **OK**.
-
-*When saving the Task Scheduler, enter your username (username, ADUser\username, CORP\username, etc.) and your Windows password.*
 
 ## Troubleshooting Hotspot Not Activating After Sleep/Hibernation
 
@@ -50,10 +47,10 @@ If the mobile hotspot is turning itself off at random periods, you can try the f
 2. Set the **PeerlessTimeoutEnabled** and **PublicConnectionTimeout** value to a longer duration. This can be done by setting the registry value `HKLM\System\ControlSet001\Services\ICSSVC\Settings\PeerlessTimeoutEnabled` to **120** (Hexadecimal) and `HKLM\System\ControlSet001\Services\ICSSVC\Settings\PublicConnectionTimeout` to **60** (Hexadecimal).
 
     An example registry script is shown below.
-    
+
     ```
     Windows Registry Editor Version 5.00
-    
+
     [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\icssvc\Settings]
     "PeerlessTimeoutEnabled"=dword:00000120
     "PublicConnectionTimeout"=dword:00000060
